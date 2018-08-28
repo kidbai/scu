@@ -10,7 +10,7 @@ import (
 )
 
 func TestGetNow(t *testing.T) {
-	c, _ := jwc.Login(test.StudentID, test.Password)
+	c, _ := jwc.Login(test.LibStudentID, test.LibPassword)
 	type args struct {
 		c *colly.Collector
 	}
@@ -34,7 +34,7 @@ func TestGetNow(t *testing.T) {
 }
 
 func TestGetALL(t *testing.T) {
-	c, err := jwc.Login(test.JwcStudentID, test.JwcPassword)
+	c, err := jwc.Login(test.LibStudentID, test.LibPassword)
 	if err != nil {
 		panic(err)
 	}
@@ -80,8 +80,7 @@ func TestGetNotPass(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := GetNotPass(tt.args.c)
-			log.Println(got)
+			log.Println(GetNotPass(tt.args.c))
 		})
 	}
 }

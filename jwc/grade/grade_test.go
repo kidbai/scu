@@ -34,7 +34,10 @@ func TestGetNow(t *testing.T) {
 }
 
 func TestGetALL(t *testing.T) {
-	c, _ := jwc.Login(test.StudentID, test.Password)
+	c, err := jwc.Login(test.JwcStudentID, test.JwcPassword)
+	if err != nil {
+		panic(err)
+	}
 	type args struct {
 		c *colly.Collector
 	}
@@ -51,8 +54,7 @@ func TestGetALL(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := GetALL(tt.args.c)
-			log.Println(got)
+			log.Println(GetALL(tt.args.c))
 		})
 	}
 }

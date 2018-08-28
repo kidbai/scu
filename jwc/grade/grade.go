@@ -132,9 +132,8 @@ func get(c *colly.Collector, mode string) (Grades, error) {
 
 // GetNow 获取本学期成绩
 func GetNow(c *colly.Collector) Grades {
-	var grades Grades
-
-	return grades
+	// TODO 暂时不知道api
+	return nil
 }
 
 // GetALL 获取所有及格成绩

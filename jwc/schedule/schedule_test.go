@@ -11,7 +11,7 @@ import (
 )
 
 func TestGet(t *testing.T) {
-	c, _ := jwc.Login(test.StudentID, test.Password)
+	c, _ := jwc.Login(test.JwcStudentID, test.JwcPassword)
 	type args struct {
 		c *colly.Collector
 	}
@@ -28,8 +28,7 @@ func TestGet(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			gotData := Get(tt.args.c)
-			log.Println(gotData)
+			log.Println(Get(tt.args.c))
 		})
 	}
 }

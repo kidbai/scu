@@ -14,10 +14,10 @@ func TestGetEvaList(t *testing.T) {
 		panic(err)
 	}
 
-	// t.Log(len(res), err, res)
-	c, _ = jwc.Login(test.JwcStudentID, test.JwcPassword)
-	r := res[len(res)-2]
-	r.Comment = "超级棒的老师"
-	r.Star = 5
-	t.Log(AddEvaluate(c, &r))
+	t.Log(len(res), err, res[1])
+	// c, _ = jwc.Login(test.JwcStudentID, test.JwcPassword)
+	// r := res[len(res)-2]
+	// r.Comment = "超级棒的老师"
+	// r.Star = 5
+	// t.Log(AddEvaluate(c, &r))
 }
